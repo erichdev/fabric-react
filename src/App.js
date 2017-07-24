@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  DocumentCard,
+  DocumentCardPreview,
+  DocumentCardTitle,
+  DocumentCardActivity
+} from 'office-ui-fabric-react/lib/DocumentCard'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <DocumentCard onClickHref='http://bing.com'>
+          <DocumentCardPreview
+            previewImages={[
+              {
+                previewImageSrc: require('./documentpreview.png'),
+                iconSrc: require('./iconppt.png'),
+                width: 318,
+                height: 196,
+                accentColor: '#ce4b1f'
+              }
+            ]}
+          />
+          <DocumentCardTitle title='Revenue stream proposal fiscal year 2016 version02.pptx' />
+          <DocumentCardActivity
+            activity='Created July 23, 2017'
+            people={
+              [
+                {
+                  name: 'Erich Abellera',
+                  //profileImageSrc: require('./avatarkat.png')
+                }
+              ]
+            }
+          />
+        </DocumentCard>
       </div>
     );
   }
