@@ -4,10 +4,14 @@ import {
   DocumentCardPreview,
   DocumentCardTitle,
   DocumentCardActivity
-} from 'office-ui-fabric-react/lib/DocumentCard'
+} from 'office-ui-fabric-react/lib/DocumentCard';
+
+import { Image } from 'office-ui-fabric-react/lib/Image';
+
 
 class App extends Component {
   render() {
+
     return (
       <div>
         <DocumentCard onClickHref='http://bing.com'>
@@ -35,6 +39,11 @@ class App extends Component {
             }
           />
         </DocumentCard>
+      <Image 
+      src='http://placehold.it/200/200'
+      width={100}
+      height={100}
+      />
       </div>
     );
   }
